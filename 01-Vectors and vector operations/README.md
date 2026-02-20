@@ -24,7 +24,7 @@ A vector is simply an **ordered list of numbers** that represents something with
 
 Imagine you're giving someone directions: "Walk 3 blocks East and 4 blocks North." That instruction captures *how far* and *which way*. That's a vector: $\mathbf{v} = (3, 4)$.
 
-A temperature reading like $23°C$ is just a number (a **scalar**). But wind velocity — "20 km/h heading North-East" — has both magnitude and direction. That's a **vector**.
+A temperature reading like 23°C is just a number (a **scalar**). But wind velocity — "20 km/h heading North-East" — has both magnitude and direction. That's a **vector**.
 
 ### Why do vectors exist?
 
@@ -83,11 +83,11 @@ $$\hat{\mathbf{v}} = \frac{\mathbf{v}}{\|\mathbf{v}\|}$$
 
 **Other norms:**
 
-| Norm           | Formula                                  | Meaning                |
-| -------------- | ---------------------------------------- | ---------------------- |
-| L1 (Manhattan) | $\|\mathbf{v}\|_1 = \sum_i               | v_i                    | $ | Sum of absolute values |
+| Norm | Formula | Meaning |
+| ---- | ------- | ------- |
+| L1 (Manhattan) | $\|\mathbf{v}\|_1 = \sum_i \lvert v_i \rvert$ | Sum of absolute values |
 | L2 (Euclidean) | $\|\mathbf{v}\|_2 = \sqrt{\sum_i v_i^2}$ | Straight-line distance |
-| L\infty (Max)  | $\|\mathbf{v}\|_\infty = \max_i          | v_i                    | $ | Largest component      |
+| $L_\infty$ (Max) | $\|\mathbf{v}\|_\infty = \max_i \lvert v_i \rvert$ | Largest component |
 
 ### 2.5 Dot Product (Inner Product)
 
@@ -105,9 +105,9 @@ where $\theta$ is the angle between $\mathbf{u}$ and $\mathbf{v}$.
 - $\mathbf{v} \cdot \mathbf{v} = \|\mathbf{v}\|^2$
 
 **What the dot product measures:**
-- $\mathbf{u} \cdot \mathbf{v} > 0$: vectors point in the same general direction ($\theta < 90°$)
-- $\mathbf{u} \cdot \mathbf{v} = 0$: vectors are **orthogonal** ($\theta = 90°$)
-- $\mathbf{u} \cdot \mathbf{v} < 0$: vectors point in opposite directions ($\theta > 90°$)
+- $\mathbf{u} \cdot \mathbf{v} > 0$: vectors point in the same general direction ($\theta < 90^\circ$)
+- $\mathbf{u} \cdot \mathbf{v} = 0$: vectors are **orthogonal** ($\theta = 90^\circ$)
+- $\mathbf{u} \cdot \mathbf{v} < 0$: vectors point in opposite directions ($\theta > 90^\circ$)
 
 **Cauchy-Schwarz Inequality:**
 
@@ -179,7 +179,7 @@ $$\mathbf{u} \cdot \mathbf{v} = (1)(4) + (2)(0) + (3)(-1) = 4 + 0 - 3 = 1$$
 **e) Angle between $\mathbf{u}$ and $\mathbf{v}$:**
 $$\|\mathbf{v}\| = \sqrt{16 + 0 + 1} = \sqrt{17}$$
 $$\cos\theta = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\|\|\mathbf{v}\|} = \frac{1}{\sqrt{14} \cdot \sqrt{17}} = \frac{1}{\sqrt{238}} \approx 0.0648$$
-$$\theta = \arccos(0.0648) \approx 86.3°$$
+$$\theta = \arccos(0.0648) \approx 86.3^\circ$$
 
 **f) Cross product $\mathbf{u} \times \mathbf{v}$:**
 $$\mathbf{u} \times \mathbf{v} = \begin{bmatrix} (2)(-1) - (3)(0) \\ (3)(4) - (1)(-1) \\ (1)(0) - (2)(4) \end{bmatrix} = \begin{bmatrix} -2 \\ 13 \\ -8 \end{bmatrix}$$
@@ -391,7 +391,7 @@ pandas>=2.2,<3.0
 
 ### Q1 (Conceptual): What does a zero dot product between two non-zero vectors mean?
 
-**Answer:** The vectors are **orthogonal** — they are perpendicular to each other ($\theta = 90°$). This means they share no component in common directions. Geometrically, neither vector has any projection along the other.
+**Answer:** The vectors are **orthogonal** — they are perpendicular to each other ($\theta = 90^\circ$). This means they share no component in common directions. Geometrically, neither vector has any projection along the other.
 
 ---
 
