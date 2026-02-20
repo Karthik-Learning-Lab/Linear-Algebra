@@ -130,7 +130,7 @@ $$\mathbf{u} \times \mathbf{v} = \begin{vmatrix} \mathbf{e}_1 & \mathbf{e}_2 & \
 
 The scalar projection of $\mathbf{u}$ onto $\mathbf{v}$:
 
-$$\text{proj\_scalar} = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{v}\|}$$
+$$\text{proj}_{\text{scalar}} = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{v}\|}$$
 
 The vector projection of $\mathbf{u}$ onto $\mathbf{v}$:
 
@@ -146,7 +146,7 @@ $$\mathbf{w} = \alpha_1 \mathbf{v}_1 + \alpha_2 \mathbf{v}_2 + \cdots + \alpha_k
 
 The **span** is the set of all possible linear combinations:
 
-$$\text{span}(\mathbf{v}_1, \ldots, \mathbf{v}_k) = \left\{ \sum_{i=1}^k \alpha_i \mathbf{v}_i \mid \alpha_i \in \mathbb{R} \right\}$$
+$$\text{span}(\mathbf{v}_1, \ldots, \mathbf{v}_k) = \Bigl\lbrace \sum_{i=1}^k \alpha_i \mathbf{v}_i \mid \alpha_i \in \mathbb{R} \Bigr\rbrace$$
 
 ### 2.9 Linear Independence
 
