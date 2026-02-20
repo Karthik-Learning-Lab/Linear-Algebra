@@ -52,6 +52,7 @@ Let $\mathbf{A} \in \mathbb{R}^{n \times n}$. A non-zero vector $\mathbf{v} \in 
 $$\mathbf{A}\mathbf{v} = \lambda \mathbf{v}$$
 
 Rearranged:
+
 $$(\mathbf{A} - \lambda \mathbf{I})\mathbf{v} = \mathbf{0}$$
 
 For a non-trivial (non-zero) solution $\mathbf{v}$ to exist, $(\mathbf{A} - \lambda\mathbf{I})$ must be **singular**:

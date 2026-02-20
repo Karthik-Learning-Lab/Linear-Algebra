@@ -47,6 +47,7 @@ Imagine you have a complex, hard-to-use tool. You disassemble it into simple par
 Let $\mathbf{A} \in \mathbb{R}^{n \times n}$ with $n$ linearly independent eigenvectors $\mathbf{v}_1, \ldots, \mathbf{v}_n$ and corresponding eigenvalues $\lambda_1, \ldots, \lambda_n$.
 
 Define:
+
 $$\mathbf{P} = \begin{bmatrix} \mathbf{v}_1 & \mathbf{v}_2 & \cdots & \mathbf{v}_n \end{bmatrix} \in \mathbb{R}^{n\times n}$$
 
 $$\boldsymbol{\Lambda} = \begin{bmatrix} \lambda_1 & & \\ & \ddots & \\ & & \lambda_n \end{bmatrix} \in \mathbb{R}^{n\times n}$$
