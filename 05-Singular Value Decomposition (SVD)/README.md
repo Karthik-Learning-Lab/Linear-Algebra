@@ -186,11 +186,15 @@ $$\sigma_1 = \sqrt{45} = 3\sqrt{5}, \quad \sigma_2 = \sqrt{5}$$
 
 **Step 4: Right singular vectors (eigenvectors of $\mathbf{A}^\top\mathbf{A}$):**
 
-For $\lambda_1 = 45$: $(\mathbf{A}^\top\mathbf{A} - 45\mathbf{I})\mathbf{v} = \begin{bmatrix}-20&20\\20&-20\end{bmatrix}\mathbf{v} = 0 \Rightarrow v_1 = v_2$
+For $\lambda_1 = 45$:
+
+$$(\mathbf{A}^\top\mathbf{A} - 45\mathbf{I})\mathbf{v} = \begin{bmatrix}-20&20\\20&-20\end{bmatrix}\mathbf{v} = \mathbf{0} \implies v_1 = v_2$$
 
 $$\mathbf{v}_1 = \frac{1}{\sqrt{2}}\begin{bmatrix}1\\1\end{bmatrix}$$
 
-For $\lambda_2 = 5$: $(\mathbf{A}^\top\mathbf{A} - 5\mathbf{I})\mathbf{v} = \begin{bmatrix}20&20\\20&20\end{bmatrix}\mathbf{v} = 0 \Rightarrow v_2 = -v_1$
+For $\lambda_2 = 5$:
+
+$$(\mathbf{A}^\top\mathbf{A} - 5\mathbf{I})\mathbf{v} = \begin{bmatrix}20&20\\20&20\end{bmatrix}\mathbf{v} = \mathbf{0} \implies v_2 = -v_1$$
 
 $$\mathbf{v}_2 = \frac{1}{\sqrt{2}}\begin{bmatrix}1\\-1\end{bmatrix}$$
 
@@ -431,16 +435,19 @@ pandas>=2.2,<3.0
 
 ---
 
-### Q3 (Mathematical): For $\mathbf{A} = \begin{bmatrix}2&0\\0&3\\0&0\end{bmatrix}$, write out the full SVD.
+### Q3 (Mathematical): Write the full SVD of the rectangular matrix $\mathbf{A}$ given below.
 
 **Answer:**
 
-$\mathbf{A} \in \mathbb{R}^{3\times 2}$. The singular values are the non-zero entries: $\sigma_1 = 3$, $\sigma_2 = 2$ (sorted descending).
+$$\mathbf{A} = \begin{bmatrix}2&0\\0&3\\0&0\end{bmatrix} \in \mathbb{R}^{3\times 2}$$
+
+The singular values are the non-zero entries: $\sigma_1 = 3$, $\sigma_2 = 2$ (sorted descending).
 
 $$\mathbf{U} = \begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}, \quad \boldsymbol{\Sigma} = \begin{bmatrix}3&0\\0&2\\0&0\end{bmatrix}, \quad \mathbf{V}^\top = \begin{bmatrix}0&1\\1&0\end{bmatrix}$$
 
-Verify: $\mathbf{U}\boldsymbol{\Sigma}\mathbf{V}^\top = \begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}\begin{bmatrix}3&0\\0&2\\0&0\end{bmatrix}\begin{bmatrix}0&1\\1&0\end{bmatrix} = \begin{bmatrix}0&2\\3&0\\0&0\end{bmatrix} \cdot \begin{bmatrix}0&1\\1&0\end{bmatrix}$...
-(Full reconstruction matches $\mathbf{A}$ — the column reordering permutes rows/columns correctly.) $\checkmark$
+**Verify:**
+
+$$\mathbf{U}\boldsymbol{\Sigma}\mathbf{V}^\top = \begin{bmatrix}0&1&0\\1&0&0\\0&0&1\end{bmatrix}\begin{bmatrix}3&0\\0&2\\0&0\end{bmatrix}\begin{bmatrix}0&1\\1&0\end{bmatrix} = \begin{bmatrix}0&2\\3&0\\0&0\end{bmatrix}\begin{bmatrix}0&1\\1&0\end{bmatrix} = \begin{bmatrix}2&0\\0&3\\0&0\end{bmatrix} = \mathbf{A} \checkmark$$
 
 ---
 
