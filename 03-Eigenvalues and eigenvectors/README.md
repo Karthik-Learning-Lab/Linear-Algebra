@@ -99,7 +99,7 @@ For a square matrix $\mathbf{A}$:
 | Real symmetric matrices         | All eigenvalues are real             |
 | Positive definite matrices      | All eigenvalues $> 0$                |
 | Positive semi-definite matrices | All eigenvalues $\geq 0$             |
-| Orthogonal matrices             | All eigenvalues have $               | \lambda | = 1$ |
+| Orthogonal matrices             | All eigenvalues have $\lvert\lambda\rvert = 1$ |
 | Triangular matrices             | Eigenvalues are the diagonal entries |
 
 **Invariance under similarity:** If $\mathbf{B} = \mathbf{P}^{-1}\mathbf{A}\mathbf{P}$, then $\mathbf{A}$ and $\mathbf{B}$ have the same eigenvalues.
