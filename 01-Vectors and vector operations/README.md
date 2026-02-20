@@ -165,26 +165,35 @@ Otherwise they are **linearly dependent** — at least one can be written as a c
 Given $\mathbf{u} = (1, 2, 3)^\top$ and $\mathbf{v} = (4, 0, -1)^\top$.
 
 **a) Vector addition:**
+
 $$\mathbf{u} + \mathbf{v} = \begin{bmatrix} 1+4 \\ 2+0 \\ 3+(-1) \end{bmatrix} = \begin{bmatrix} 5 \\ 2 \\ 2 \end{bmatrix}$$
 
 **b) Scalar multiplication by $\alpha = 3$:**
+
 $$3\mathbf{u} = \begin{bmatrix} 3 \\ 6 \\ 9 \end{bmatrix}$$
 
 **c) Norm of $\mathbf{u}$:**
+
 $$\|\mathbf{u}\| = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{1 + 4 + 9} = \sqrt{14} \approx 3.742$$
 
 **d) Dot product:**
+
 $$\mathbf{u} \cdot \mathbf{v} = (1)(4) + (2)(0) + (3)(-1) = 4 + 0 - 3 = 1$$
 
 **e) Angle between $\mathbf{u}$ and $\mathbf{v}$:**
+
 $$\|\mathbf{v}\| = \sqrt{16 + 0 + 1} = \sqrt{17}$$
+
 $$\cos\theta = \frac{\mathbf{u} \cdot \mathbf{v}}{\|\mathbf{u}\|\|\mathbf{v}\|} = \frac{1}{\sqrt{14} \cdot \sqrt{17}} = \frac{1}{\sqrt{238}} \approx 0.0648$$
+
 $$\theta = \arccos(0.0648) \approx 86.3^\circ$$
 
 **f) Cross product $\mathbf{u} \times \mathbf{v}$:**
+
 $$\mathbf{u} \times \mathbf{v} = \begin{bmatrix} (2)(-1) - (3)(0) \\ (3)(4) - (1)(-1) \\ (1)(0) - (2)(4) \end{bmatrix} = \begin{bmatrix} -2 \\ 13 \\ -8 \end{bmatrix}$$
 
 **Verification (orthogonality):**
+
 $$\mathbf{u} \cdot (\mathbf{u} \times \mathbf{v}) = (1)(-2) + (2)(13) + (3)(-8) = -2 + 26 - 24 = 0 \checkmark$$
 
 ---
@@ -198,19 +207,25 @@ $$\mathbf{u} \cdot (\mathbf{u} \times \mathbf{v}) = (1)(-2) + (2)(13) + (3)(-8) 
 3. Verify orthogonality of the perpendicular component.
 
 **Step 1: Compute $\mathbf{a} \cdot \mathbf{b}$ and $\|\mathbf{b}\|^2$:**
+
 $$\mathbf{a} \cdot \mathbf{b} = (2)(1) + (1)(3) + (-1)(2) = 2 + 3 - 2 = 3$$
+
 $$\|\mathbf{b}\|^2 = 1 + 9 + 4 = 14$$
 
 **Step 2: Vector projection (parallel component):**
+
 $$\mathbf{a}_\parallel = \text{proj}_{\mathbf{b}} \mathbf{a} = \frac{\mathbf{a} \cdot \mathbf{b}}{\|\mathbf{b}\|^2} \mathbf{b} = \frac{3}{14} \begin{bmatrix} 1 \\ 3 \\ 2 \end{bmatrix} = \begin{bmatrix} 3/14 \\ 9/14 \\ 6/14 \end{bmatrix} = \begin{bmatrix} 3/14 \\ 9/14 \\ 3/7 \end{bmatrix}$$
 
 **Step 3: Perpendicular component:**
+
 $$\mathbf{a}_\perp = \mathbf{a} - \mathbf{a}_\parallel = \begin{bmatrix} 2 \\ 1 \\ -1 \end{bmatrix} - \begin{bmatrix} 3/14 \\ 9/14 \\ 3/7 \end{bmatrix} = \begin{bmatrix} 28/14 - 3/14 \\ 14/14 - 9/14 \\ -14/14 - 6/14 \end{bmatrix} = \begin{bmatrix} 25/14 \\ 5/14 \\ -20/14 \end{bmatrix}$$
 
 **Step 4: Verify $\mathbf{a}_\perp \perp \mathbf{b}$:**
+
 $$\mathbf{a}_\perp \cdot \mathbf{b} = \frac{25}{14}(1) + \frac{5}{14}(3) + \frac{-20}{14}(2) = \frac{25 + 15 - 40}{14} = \frac{0}{14} = 0 \checkmark$$
 
 **Step 5: Verify reconstruction:**
+
 $$\mathbf{a}_\parallel + \mathbf{a}_\perp = \begin{bmatrix} 3/14 + 25/14 \\ 9/14 + 5/14 \\ 6/14 - 20/14 \end{bmatrix} = \begin{bmatrix} 28/14 \\ 14/14 \\ -14/14 \end{bmatrix} = \begin{bmatrix} 2 \\ 1 \\ -1 \end{bmatrix} = \mathbf{a} \checkmark$$
 
 ---
@@ -410,8 +425,10 @@ $$f(\lambda) = \|\mathbf{u}\|^2 + 2\lambda(\mathbf{u} \cdot \mathbf{v}) + \lambd
 This is a quadratic in $\lambda$ that is always non-negative. Its discriminant must be $\leq 0$:
 
 $$\Delta = 4(\mathbf{u} \cdot \mathbf{v})^2 - 4\|\mathbf{u}\|^2\|\mathbf{v}\|^2 \leq 0$$
-$$\Rightarrow (\mathbf{u} \cdot \mathbf{v})^2 \leq \|\mathbf{u}\|^2 \|\mathbf{v}\|^2$$
-$$\Rightarrow |\mathbf{u} \cdot \mathbf{v}| \leq \|\mathbf{u}\| \|\mathbf{v}\| \quad \checkmark$$
+
+$$\implies (\mathbf{u} \cdot \mathbf{v})^2 \leq \|\mathbf{u}\|^2 \|\mathbf{v}\|^2$$
+
+$$\implies |\mathbf{u} \cdot \mathbf{v}| \leq \|\mathbf{u}\| \|\mathbf{v}\| \quad \checkmark$$
 
 ---
 
@@ -420,9 +437,11 @@ $$\Rightarrow |\mathbf{u} \cdot \mathbf{v}| \leq \|\mathbf{u}\| \|\mathbf{v}\| \
 **Answer:**
 
 Step 1 — Unit vector:
+
 $$\|\mathbf{v}\| = \sqrt{9 + 16} = 5, \quad \hat{\mathbf{v}} = \frac{1}{5}\begin{bmatrix}3 \\ -4\end{bmatrix} = \begin{bmatrix}0.6 \\ -0.8\end{bmatrix}$$
 
 Step 2 — Projection of $\hat{\mathbf{v}}$ onto $\mathbf{w}$:
+
 $$\text{proj}_{\mathbf{w}} \hat{\mathbf{v}} = \frac{\hat{\mathbf{v}} \cdot \mathbf{w}}{\|\mathbf{w}\|^2} \mathbf{w} = \frac{0.6 - 0.8}{2} \begin{bmatrix}1 \\ 1\end{bmatrix} = \frac{-0.2}{2}\begin{bmatrix}1 \\ 1\end{bmatrix} = \begin{bmatrix}-0.1 \\ -0.1\end{bmatrix}$$
 
 ---

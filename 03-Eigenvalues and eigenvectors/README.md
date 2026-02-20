@@ -69,6 +69,7 @@ This is a degree-$n$ polynomial in $\lambda$. Its roots (possibly complex) are t
 $$\mathbf{A} = \begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
 
 $$\det(\mathbf{A} - \lambda\mathbf{I}) = (a-\lambda)(d-\lambda) - bc = \lambda^2 - (a+d)\lambda + (ad-bc)$$
+
 $$= \lambda^2 - \text{tr}(\mathbf{A})\lambda + \det(\mathbf{A}) = 0$$
 
 ### 2.3 Key Relationships
@@ -76,6 +77,7 @@ $$= \lambda^2 - \text{tr}(\mathbf{A})\lambda + \det(\mathbf{A}) = 0$$
 For any $n\times n$ matrix $\mathbf{A}$ with eigenvalues $\lambda_1, \ldots, \lambda_n$:
 
 $$\text{tr}(\mathbf{A}) = \sum_{i=1}^n \lambda_i$$
+
 $$\det(\mathbf{A}) = \prod_{i=1}^n \lambda_i$$
 
 These are always true (Vieta's formulas applied to the characteristic polynomial).
@@ -144,15 +146,19 @@ Eigenvalues describe how the matrix stretches/compresses space along its eigenve
 $$\mathbf{A} = \begin{bmatrix} 4 & 1 \\ 2 & 3 \end{bmatrix}$$
 
 **Step 1: Characteristic polynomial:**
+
 $$\det(\mathbf{A} - \lambda\mathbf{I}) = \det\begin{bmatrix}4-\lambda & 1\\2 & 3-\lambda\end{bmatrix} = (4-\lambda)(3-\lambda) - (1)(2)$$
+
 $$= 12 - 7\lambda + \lambda^2 - 2 = \lambda^2 - 7\lambda + 10 = 0$$
 
 **Step 2: Solve for eigenvalues:**
+
 $$(\lambda - 5)(\lambda - 2) = 0 \implies \lambda_1 = 5, \quad \lambda_2 = 2$$
 
 **Verify:** $\lambda_1 + \lambda_2 = 7 = \text{tr}(\mathbf{A}) = 4 + 3 \checkmark$; $\lambda_1 \lambda_2 = 10 = \det(\mathbf{A}) = 12-2 \checkmark$
 
 **Step 3: Eigenvector for $\lambda_1 = 5$:**
+
 $$(\mathbf{A} - 5\mathbf{I})\mathbf{v} = \begin{bmatrix}-1 & 1\\2 & -2\end{bmatrix}\begin{bmatrix}v_1\\v_2\end{bmatrix} = \mathbf{0}$$
 
 Row 1: $-v_1 + v_2 = 0 \implies v_2 = v_1$
@@ -160,6 +166,7 @@ Row 1: $-v_1 + v_2 = 0 \implies v_2 = v_1$
 $$\mathbf{v}_1 = \begin{bmatrix}1\\1\end{bmatrix} \quad \text{(or any scalar multiple)}$$
 
 **Step 4: Eigenvector for $\lambda_2 = 2$:**
+
 $$(\mathbf{A} - 2\mathbf{I})\mathbf{v} = \begin{bmatrix}2 & 1\\2 & 1\end{bmatrix}\begin{bmatrix}v_1\\v_2\end{bmatrix} = \mathbf{0}$$
 
 Row 1: $2v_1 + v_2 = 0 \implies v_2 = -2v_1$
@@ -167,6 +174,7 @@ Row 1: $2v_1 + v_2 = 0 \implies v_2 = -2v_1$
 $$\mathbf{v}_2 = \begin{bmatrix}1\\-2\end{bmatrix}$$
 
 **Verification for $\lambda_1 = 5$:**
+
 $$\mathbf{A}\mathbf{v}_1 = \begin{bmatrix}4+1\\2+3\end{bmatrix} = \begin{bmatrix}5\\5\end{bmatrix} = 5\begin{bmatrix}1\\1\end{bmatrix} \checkmark$$
 
 ---
@@ -184,6 +192,7 @@ $$\lambda_1 = 2 \text{ (algebraic multiplicity 2)}, \quad \lambda_2 = 3$$
 Formally: $\det(\mathbf{A} - \lambda\mathbf{I}) = (2-\lambda)^2(3-\lambda)$
 
 **Step 2: Eigenvectors for $\lambda = 2$:**
+
 $$\mathbf{A} - 2\mathbf{I} = \begin{bmatrix}0 & 0 & 1\\0 & 0 & 0\\0 & 0 & 1\end{bmatrix}$$
 
 Row reduction gives: $v_3 = 0$; $v_1, v_2$ are free.
@@ -193,6 +202,7 @@ $$\mathbf{v}_1 = \begin{bmatrix}1\\0\\0\end{bmatrix}, \quad \mathbf{v}_2 = \begi
 Geometric multiplicity = 2 = Algebraic multiplicity $\Rightarrow$ matrix is **diagonalisable** at this eigenvalue.
 
 **Step 3: Eigenvector for $\lambda = 3$:**
+
 $$\mathbf{A} - 3\mathbf{I} = \begin{bmatrix}-1 & 0 & 1\\0 & -1 & 0\\0 & 0 & 0\end{bmatrix}$$
 
 From row 1: $v_1 = v_3$. From row 2: $v_2 = 0$. Set $v_3 = 1$:
@@ -400,6 +410,7 @@ So $(\lambda - \mu)(\mathbf{u}^\top\mathbf{v}) = 0$. Since $\lambda \neq \mu$, w
 $$\mathbf{A} = \begin{bmatrix}3 & -2\\1 & 0\end{bmatrix}$$
 
 $$\det(\mathbf{A} - \lambda\mathbf{I}) = (3-\lambda)(0-\lambda) - (-2)(1) = -\lambda(3-\lambda) + 2 = \lambda^2 - 3\lambda + 2 = 0$$
+
 $$(\lambda-1)(\lambda-2) = 0 \implies \lambda_1 = 1, \quad \lambda_2 = 2$$
 
 Check: $\text{tr}(\mathbf{A}) = 3 = 1+2$ $\checkmark$; $\det(\mathbf{A}) = 0+2 = 2 = 1\times2$ $\checkmark$

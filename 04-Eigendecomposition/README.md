@@ -48,6 +48,7 @@ Let $\mathbf{A} \in \mathbb{R}^{n \times n}$ with $n$ linearly independent eigen
 
 Define:
 $$\mathbf{P} = \begin{bmatrix} \mathbf{v}_1 & \mathbf{v}_2 & \cdots & \mathbf{v}_n \end{bmatrix} \in \mathbb{R}^{n\times n}$$
+
 $$\boldsymbol{\Lambda} = \begin{bmatrix} \lambda_1 & & \\ & \ddots & \\ & & \lambda_n \end{bmatrix} \in \mathbb{R}^{n\times n}$$
 
 From $\mathbf{A}\mathbf{v}_i = \lambda_i \mathbf{v}_i$ for all $i$:
@@ -139,18 +140,23 @@ $$\mathbf{A} = \begin{bmatrix}4 & 1\\2 & 3\end{bmatrix}$$
 From Topic 03: $\lambda_1 = 5$, $\mathbf{v}_1 = (1,1)^\top$; $\lambda_2 = 2$, $\mathbf{v}_2 = (1,-2)^\top$.
 
 **Step 1: Form $\mathbf{P}$ and $\boldsymbol{\Lambda}$:**
+
 $$\mathbf{P} = \begin{bmatrix}1 & 1\\1 & -2\end{bmatrix}, \qquad \boldsymbol{\Lambda} = \begin{bmatrix}5 & 0\\0 & 2\end{bmatrix}$$
 
 **Step 2: Compute $\mathbf{P}^{-1}$:**
+
 $$\det(\mathbf{P}) = (1)(-2) - (1)(1) = -3$$
+
 $$\mathbf{P}^{-1} = \frac{1}{-3}\begin{bmatrix}-2 & -1\\-1 & 1\end{bmatrix} = \begin{bmatrix}2/3 & 1/3\\1/3 & -1/3\end{bmatrix}$$
 
 **Step 3: Verify $\mathbf{A} = \mathbf{P}\boldsymbol{\Lambda}\mathbf{P}^{-1}$:**
+
 $$\mathbf{P}\boldsymbol{\Lambda} = \begin{bmatrix}1\cdot5 & 1\cdot2\\1\cdot5 & -2\cdot2\end{bmatrix} = \begin{bmatrix}5 & 2\\5 & -4\end{bmatrix}$$
 
 $$\mathbf{P}\boldsymbol{\Lambda}\mathbf{P}^{-1} = \begin{bmatrix}5 & 2\\5 & -4\end{bmatrix}\begin{bmatrix}2/3 & 1/3\\1/3 & -1/3\end{bmatrix} = \begin{bmatrix}10/3+2/3 & 5/3-2/3\\10/3-4/3 & 5/3+4/3\end{bmatrix} = \begin{bmatrix}4 & 1\\2 & 3\end{bmatrix} = \mathbf{A} \checkmark$$
 
 **Step 4: Compute $\mathbf{A}^3$ efficiently:**
+
 $$\boldsymbol{\Lambda}^3 = \begin{bmatrix}5^3 & 0\\0 & 2^3\end{bmatrix} = \begin{bmatrix}125 & 0\\0 & 8\end{bmatrix}$$
 
 $$\mathbf{A}^3 = \mathbf{P}\boldsymbol{\Lambda}^3\mathbf{P}^{-1} = \begin{bmatrix}1&1\\1&-2\end{bmatrix}\begin{bmatrix}125 & 0\\0 & 8\end{bmatrix}\begin{bmatrix}2/3&1/3\\1/3&-1/3\end{bmatrix}$$
@@ -166,6 +172,7 @@ $$\mathbf{S} = \begin{bmatrix}3 & 1\\1 & 3\end{bmatrix}$$
 **Step 1: Eigenvalues:**
 
 $$\det(\mathbf{S} - \lambda\mathbf{I}) = (3-\lambda)^2 - 1 = \lambda^2 - 6\lambda + 8 = (\lambda-4)(\lambda-2) = 0$$
+
 $$\lambda_1 = 4, \quad \lambda_2 = 2$$
 
 **Step 2: Eigenvectors:**
@@ -185,7 +192,9 @@ $$(\mathbf{S}-2\mathbf{I})\mathbf{v} = \begin{bmatrix}1&1\\1&1\end{bmatrix}\math
 $$\mathbf{Q} = \frac{1}{\sqrt{2}}\begin{bmatrix}1&1\\1&-1\end{bmatrix}, \quad \boldsymbol{\Lambda} = \begin{bmatrix}4&0\\0&2\end{bmatrix}$$
 
 **Step 4: Spectral outer-product form:**
+
 $$\mathbf{S} = 4\mathbf{v}_1\mathbf{v}_1^\top + 2\mathbf{v}_2\mathbf{v}_2^\top = 4\cdot\frac{1}{2}\begin{bmatrix}1&1\\1&1\end{bmatrix} + 2\cdot\frac{1}{2}\begin{bmatrix}1&-1\\-1&1\end{bmatrix}$$
+
 $$= \begin{bmatrix}2&2\\2&2\end{bmatrix} + \begin{bmatrix}1&-1\\-1&1\end{bmatrix} = \begin{bmatrix}3&1\\1&3\end{bmatrix} = \mathbf{S} \checkmark$$
 
 ---

@@ -58,6 +58,7 @@ where:
 - $\mathbf{V} \in \mathbb{R}^{n \times n}$: **right singular vectors** (orthonormal columns; $\mathbf{V}^\top\mathbf{V} = \mathbf{V}\mathbf{V}^\top = \mathbf{I}_n$)
 
 **Full SVD form:**
+
 $$\boldsymbol{\Sigma} = \begin{bmatrix} \sigma_1 & & & \\ & \sigma_2 & & \\ & & \ddots & \\ & & & \sigma_r & \mathbf{0} \\ & \mathbf{0} & & & \mathbf{0} \end{bmatrix}_{m \times n}$$
 
 ### 2.2 Derivation
@@ -65,19 +66,23 @@ $$\boldsymbol{\Sigma} = \begin{bmatrix} \sigma_1 & & & \\ & \sigma_2 & & \\ & & 
 **Step 1:** Form $\mathbf{A}^\top\mathbf{A} \in \mathbb{R}^{n \times n}$. This is symmetric positive semi-definite.
 
 **Eigendecompose:**
+
 $$\mathbf{A}^\top\mathbf{A} = \mathbf{V}\boldsymbol{\Lambda}\mathbf{V}^\top, \quad \Lambda = \text{diag}(\lambda_1, \ldots, \lambda_n), \quad \lambda_i \geq 0$$
 
 **Step 2:** Singular values:
+
 $$\sigma_i = \sqrt{\lambda_i}$$
 
 The columns of $\mathbf{V}$ are the **right singular vectors**.
 
 **Step 3:** Left singular vectors (for $\sigma_i > 0$):
+
 $$\mathbf{u}_i = \frac{1}{\sigma_i}\mathbf{A}\mathbf{v}_i$$
 
 This ensures $\mathbf{A}\mathbf{v}_i = \sigma_i\mathbf{u}_i$.
 
 **Equivalently** from $\mathbf{A}\mathbf{A}^\top \in \mathbb{R}^{m \times m}$:
+
 $$\mathbf{A}\mathbf{A}^\top = \mathbf{U}\boldsymbol{\Lambda}'\mathbf{U}^\top$$
 
 where $\boldsymbol{\Lambda}'$ contains the same non-zero values as $\boldsymbol{\Lambda}$ (the non-zero eigenvalues of $\mathbf{A}^\top\mathbf{A}$ and $\mathbf{A}\mathbf{A}^\top$ are identical).
@@ -105,7 +110,9 @@ Each term $\sigma_i \mathbf{u}_i \mathbf{v}_i^\top$ is a rank-1 matrix. SVD brea
 $$\mathbf{A}_k = \sum_{i=1}^k \sigma_i \mathbf{u}_i \mathbf{v}_i^\top = \mathbf{U}_k \boldsymbol{\Sigma}_k \mathbf{V}_k^\top$$
 
 **Approximation errors:**
+
 $$\|\mathbf{A} - \mathbf{A}_k\|_F = \sqrt{\sigma_{k+1}^2 + \cdots + \sigma_r^2}$$
+
 $$\|\mathbf{A} - \mathbf{A}_k\|_2 = \sigma_{k+1}$$
 
 This is the theoretical foundation of **image compression**, **PCA**, and **latent semantic analysis**.
@@ -149,7 +156,9 @@ $$\mathbf{x}^* = \mathbf{A}^+\mathbf{b}$$
 ### 2.9 Matrix Norms via SVD
 
 $$\|\mathbf{A}\|_2 = \sigma_1 \quad \text{(spectral/operator norm)}$$
+
 $$\|\mathbf{A}\|_F = \sqrt{\sum_{i=1}^r \sigma_i^2} = \sqrt{\text{tr}(\mathbf{A}^\top\mathbf{A})} \quad \text{(Frobenius norm)}$$
+
 $$\|\mathbf{A}\|_* = \sum_{i=1}^r \sigma_i \quad \text{(nuclear/trace norm — promotes low rank in optimisation)}$$
 
 ### 2.10 Numerical Stability
@@ -174,14 +183,19 @@ Large $\kappa$ means the system is ill-conditioned — small perturbations in $\
 $$\mathbf{A} = \begin{bmatrix}3 & 0\\4 & 5\end{bmatrix}$$
 
 **Step 1: Compute $\mathbf{A}^\top\mathbf{A}$:**
+
 $$\mathbf{A}^\top\mathbf{A} = \begin{bmatrix}3 & 4\\0 & 5\end{bmatrix}\begin{bmatrix}3 & 0\\4 & 5\end{bmatrix} = \begin{bmatrix}9+16 & 0+20\\20+0 & 0+25\end{bmatrix} = \begin{bmatrix}25 & 20\\20 & 25\end{bmatrix}$$
 
 **Step 2: Eigenvalues of $\mathbf{A}^\top\mathbf{A}$:**
+
 $$\det(\mathbf{A}^\top\mathbf{A} - \lambda\mathbf{I}) = (25-\lambda)^2 - 400 = 0$$
+
 $$(25-\lambda)^2 = 400 \implies 25-\lambda = \pm 20$$
+
 $$\lambda_1 = 45, \quad \lambda_2 = 5$$
 
 **Step 3: Singular values:**
+
 $$\sigma_1 = \sqrt{45} = 3\sqrt{5}, \quad \sigma_2 = \sqrt{5}$$
 
 **Step 4: Right singular vectors (eigenvectors of $\mathbf{A}^\top\mathbf{A}$):**
@@ -205,6 +219,7 @@ $$\mathbf{u}_1 = \frac{1}{3\sqrt{5}} \cdot \begin{bmatrix}3&0\\4&5\end{bmatrix}\
 $$\mathbf{u}_2 = \frac{1}{\sqrt{5}} \cdot \frac{1}{\sqrt{2}}\begin{bmatrix}3&0\\4&5\end{bmatrix}\begin{bmatrix}1\\-1\end{bmatrix} = \frac{1}{\sqrt{10}}\begin{bmatrix}3\\-1\end{bmatrix}$$
 
 **Result:**
+
 $$\mathbf{A} = \underbrace{\frac{1}{\sqrt{10}}\begin{bmatrix}1&3\\3&-1\end{bmatrix}}_{\mathbf{U}} \underbrace{\begin{bmatrix}3\sqrt{5}&0\\0&\sqrt{5}\end{bmatrix}}_{\boldsymbol{\Sigma}} \underbrace{\frac{1}{\sqrt{2}}\begin{bmatrix}1&1\\1&-1\end{bmatrix}}_{\mathbf{V}^\top}$$
 
 ---
@@ -216,9 +231,11 @@ $$\mathbf{A} = \underbrace{\frac{1}{\sqrt{10}}\begin{bmatrix}1&3\\3&-1\end{bmatr
 **Solution:**
 
 **Full SVD of image:**
+
 $$\mathbf{A} = \mathbf{U}\boldsymbol{\Sigma}\mathbf{V}^\top = \sum_{i=1}^{\min(m,n)} \sigma_i \mathbf{u}_i \mathbf{v}_i^\top$$
 
 **Rank-$k$ approximation:**
+
 $$\mathbf{A}_k = \sum_{i=1}^k \sigma_i \mathbf{u}_i \mathbf{v}_i^\top$$
 
 **Storage count:** For each kept component:

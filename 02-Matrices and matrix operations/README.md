@@ -119,9 +119,11 @@ $$\text{tr}(\mathbf{A}) = \sum_{i=1}^n a_{ii}$$
 For a square matrix $\mathbf{A} \in \mathbb{R}^{n \times n}$, the determinant $\det(\mathbf{A})$ (or $|\mathbf{A}|$) is a scalar encoding the **signed volume scaling factor** of the transformation.
 
 **2×2 case:**
+
 $$\det\begin{bmatrix} a & b \\ c & d \end{bmatrix} = ad - bc$$
 
 **3×3 case (cofactor expansion):**
+
 $$\det(\mathbf{A}) = a_{11}(a_{22}a_{33} - a_{23}a_{32}) - a_{12}(a_{21}a_{33} - a_{23}a_{31}) + a_{13}(a_{21}a_{32} - a_{22}a_{31})$$
 
 **Properties:**
@@ -141,6 +143,7 @@ $$\mathbf{A}\mathbf{A}^{-1} = \mathbf{A}^{-1}\mathbf{A} = \mathbf{I}$$
 **Existence condition:** $\mathbf{A}^{-1}$ exists $\Leftrightarrow \det(\mathbf{A}) \neq 0$ $\Leftrightarrow \mathbf{A}$ is full rank.
 
 **2×2 closed form:**
+
 $$\begin{bmatrix} a & b \\ c & d \end{bmatrix}^{-1} = \frac{1}{ad-bc}\begin{bmatrix} d & -b \\ -c & a \end{bmatrix}$$
 
 **Properties:**
@@ -175,23 +178,31 @@ Let:
 $$\mathbf{A} = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad \mathbf{B} = \begin{bmatrix} 5 & 6 \\ 7 & 8 \end{bmatrix}$$
 
 **a) Addition:**
+
 $$\mathbf{A} + \mathbf{B} = \begin{bmatrix} 6 & 8 \\ 10 & 12 \end{bmatrix}$$
 
 **b) Multiplication $\mathbf{A}\mathbf{B}$:**
+
 $$c_{11} = (1)(5) + (2)(7) = 19, \quad c_{12} = (1)(6) + (2)(8) = 22$$
+
 $$c_{21} = (3)(5) + (4)(7) = 43, \quad c_{22} = (3)(6) + (4)(8) = 50$$
+
 $$\mathbf{A}\mathbf{B} = \begin{bmatrix} 19 & 22 \\ 43 & 50 \end{bmatrix}$$
 
 **c) Transpose:**
+
 $$\mathbf{A}^\top = \begin{bmatrix} 1 & 3 \\ 2 & 4 \end{bmatrix}$$
 
 **d) Determinant of $\mathbf{A}$:**
+
 $$\det(\mathbf{A}) = (1)(4) - (2)(3) = 4 - 6 = -2$$
 
 **e) Inverse of $\mathbf{A}$:**
+
 $$\mathbf{A}^{-1} = \frac{1}{-2}\begin{bmatrix} 4 & -2 \\ -3 & 1 \end{bmatrix} = \begin{bmatrix} -2 & 1 \\ 3/2 & -1/2 \end{bmatrix}$$
 
 **Verification:**
+
 $$\mathbf{A}\mathbf{A}^{-1} = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}\begin{bmatrix} -2 & 1 \\ 3/2 & -1/2 \end{bmatrix} = \begin{bmatrix} -2+3 & 1-1 \\ -6+6 & 3-2 \end{bmatrix} = \begin{bmatrix} 1 & 0 \\ 0 & 1 \end{bmatrix} \checkmark$$
 
 ---
@@ -199,21 +210,27 @@ $$\mathbf{A}\mathbf{A}^{-1} = \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}\begin
 ### Example 2: Solving a Linear System via Matrix Operations (Exam-level)
 
 **Problem:** Solve the system:
+
 $$2x_1 + x_2 = 5$$
+
 $$5x_1 + 3x_2 = 13$$
 
 **Matrix form:** $\mathbf{A}\mathbf{x} = \mathbf{b}$ where:
+
 $$\mathbf{A} = \begin{bmatrix} 2 & 1 \\ 5 & 3 \end{bmatrix}, \quad \mathbf{b} = \begin{bmatrix} 5 \\ 13 \end{bmatrix}$$
 
 **Step 1:** Compute $\det(\mathbf{A})$:
+
 $$\det(\mathbf{A}) = (2)(3) - (1)(5) = 6 - 5 = 1$$
 
 **Step 2:** Since $\det(\mathbf{A}) = 1 \neq 0$, the system has a unique solution.
 
 **Step 3:** Compute $\mathbf{A}^{-1}$:
+
 $$\mathbf{A}^{-1} = \frac{1}{1}\begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix} = \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix}$$
 
 **Step 4:** Solve $\mathbf{x} = \mathbf{A}^{-1}\mathbf{b}$:
+
 $$\mathbf{x} = \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix}\begin{bmatrix} 5 \\ 13 \end{bmatrix} = \begin{bmatrix} 15 - 13 \\ -25 + 26 \end{bmatrix} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$$
 
 **Verification:**
@@ -374,7 +391,7 @@ pandas>=2.2,<3.0
 | Neural network layers     | $\mathbf{y} = \mathbf{W}\mathbf{x} + \mathbf{b}$; weight matrix $\mathbf{W}$                             |
 | Attention in Transformers | $\text{Attention} = \text{softmax}\!\Bigl(\tfrac{\mathbf{Q}\mathbf{K}^\top}{\sqrt{d_k}}\Bigr)\mathbf{V}$ |
 | Datasets                  | $\mathbf{X} \in \mathbb{R}^{N \times D}$ — $N$ samples, $D$ features                                     |
-| Covariance matrices       | $\boldsymbol{\Sigma} = \frac{1}{N}\mathbf{X}^\top\mathbf{X}$ — used in PCA                               |
+| Covariance matrices       | $\boldsymbol{\Sigma} = \tfrac{1}{N}\mathbf{X}^\top\mathbf{X}$ — used in PCA                              |
 | Graph adjacency           | $\mathbf{A}_{ij}=1$ if edge exists; central to GNNs                                                      |
 | Backpropagation           | Jacobians are matrices of partial derivatives                                                            |
 
@@ -426,7 +443,7 @@ $\det(\mathbf{A}) = 3 - 2 = 1$
 
 $$\mathbf{A}^{-1} = \frac{1}{1}\begin{bmatrix}1 & -1 \\ -2 & 3\end{bmatrix} = \begin{bmatrix}1 & -1 \\ -2 & 3\end{bmatrix}$$
 
-$$\mathbf{x} = \mathbf{A}^{-1}\mathbf{b} = \begin{bmatrix}1 & -1 \\ -2 & 3\end{bmatrix}\begin{bmatrix}7\\5\end{bmatrix} = \begin{bmatrix}2\\1\end{bmatrix}$$
+$$\mathbf{x} = \mathbf{A}^{-1}\mathbf{b} = \begin{bmatrix}1 & -1 \\ -2 & 3\end{bmatrix}\begin{bmatrix}7\\5\end{bmatrix} = \begin{bmatrix}2 \\ 1\end{bmatrix}$$
 
 ---
 
