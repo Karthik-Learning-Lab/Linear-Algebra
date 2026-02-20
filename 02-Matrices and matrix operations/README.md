@@ -216,7 +216,9 @@ $$\mathbf{A}^{-1} = \frac{1}{1}\begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix} = 
 **Step 4:** Solve $\mathbf{x} = \mathbf{A}^{-1}\mathbf{b}$:
 $$\mathbf{x} = \begin{bmatrix} 3 & -1 \\ -5 & 2 \end{bmatrix}\begin{bmatrix} 5 \\ 13 \end{bmatrix} = \begin{bmatrix} 15 - 13 \\ -25 + 26 \end{bmatrix} = \begin{bmatrix} 2 \\ 1 \end{bmatrix}$$
 
-**Verification:** $\mathbf{A}\mathbf{x} = \begin{bmatrix}2(2)+1(1)\\5(2)+3(1)\end{bmatrix} = \begin{bmatrix}5\\13\end{bmatrix} = \mathbf{b} \checkmark$
+**Verification:**
+
+$$\mathbf{A}\mathbf{x} = \begin{bmatrix}2(2)+1(1)\\5(2)+3(1)\end{bmatrix} = \begin{bmatrix}5\\13\end{bmatrix} = \mathbf{b} \checkmark$$
 
 **Bonus — show $(\mathbf{A}\mathbf{B})^\top = \mathbf{B}^\top\mathbf{A}^\top$** using the example matrices from Example 1:
 
@@ -370,7 +372,7 @@ pandas>=2.2,<3.0
 | Area                      | How matrices appear                                                                                      |
 | ------------------------- | -------------------------------------------------------------------------------------------------------- |
 | Neural network layers     | $\mathbf{y} = \mathbf{W}\mathbf{x} + \mathbf{b}$; weight matrix $\mathbf{W}$                             |
-| Attention in Transformers | $\text{Attention} = \text{softmax}\!\left(\frac{\mathbf{Q}\mathbf{K}^\top}{\sqrt{d_k}}\right)\mathbf{V}$ |
+| Attention in Transformers | $\text{Attention} = \text{softmax}\!\Bigl(\tfrac{\mathbf{Q}\mathbf{K}^\top}{\sqrt{d_k}}\Bigr)\mathbf{V}$ |
 | Datasets                  | $\mathbf{X} \in \mathbb{R}^{N \times D}$ — $N$ samples, $D$ features                                     |
 | Covariance matrices       | $\boldsymbol{\Sigma} = \frac{1}{N}\mathbf{X}^\top\mathbf{X}$ — used in PCA                               |
 | Graph adjacency           | $\mathbf{A}_{ij}=1$ if edge exists; central to GNNs                                                      |
@@ -414,9 +416,11 @@ $$(\mathbf{A}^2)^\top = \mathbf{A}\mathbf{A} = \mathbf{A}^2 \quad \checkmark$$
 
 ---
 
-### Q4 (Mathematical): Compute the inverse of $\mathbf{A} = \begin{bmatrix} 3 & 1 \\ 2 & 1 \end{bmatrix}$ and solve $\mathbf{A}\mathbf{x} = \begin{bmatrix}7\\5\end{bmatrix}$.
+### Q4 (Mathematical): Compute the inverse of $\mathbf{A}$ and solve $\mathbf{A}\mathbf{x} = \mathbf{b}$.
 
 **Answer:**
+
+$$\mathbf{A} = \begin{bmatrix} 3 & 1 \\ 2 & 1 \end{bmatrix}, \quad \mathbf{b} = \begin{bmatrix}7\\5\end{bmatrix}$$
 
 $\det(\mathbf{A}) = 3 - 2 = 1$
 
