@@ -67,7 +67,9 @@ A matrix $\mathbf{A} \in \mathbb{R}^{n\times n}$ is **diagonalisable** if and on
 - $\mathbf{A}$ is **real symmetric** (spectral theorem — always diagonalisable with orthonormal eigenvectors).
 - For every repeated eigenvalue, geometric multiplicity = algebraic multiplicity.
 
-**Non-diagonalisable (defective) matrices:** When for some $\lambda_i$, geometric multiplicity < algebraic multiplicity. Example: $\begin{bmatrix}1 & 1\\0 & 1\end{bmatrix}$ has $\lambda = 1$ with multiplicity 2 but only one independent eigenvector.
+**Non-diagonalisable (defective) matrices:** When for some $\lambda_i$, geometric multiplicity < algebraic multiplicity. Example: the Jordan block $\mathbf{J}$ below has $\lambda = 1$ with multiplicity 2 but only one independent eigenvector:
+
+$$\mathbf{J} = \begin{bmatrix}1 & 1\\0 & 1\end{bmatrix}$$
 
 ### 2.3 Orthogonal Diagonalisation (Symmetric Matrices)
 
@@ -168,9 +170,13 @@ $$\lambda_1 = 4, \quad \lambda_2 = 2$$
 
 **Step 2: Eigenvectors:**
 
-For $\lambda_1 = 4$: $(\mathbf{S}-4\mathbf{I})\mathbf{v} = \begin{bmatrix}-1&1\\1&-1\end{bmatrix}\mathbf{v} = 0 \Rightarrow \mathbf{v}_1 = \frac{1}{\sqrt{2}}\begin{bmatrix}1\\1\end{bmatrix}$
+For $\lambda_1 = 4$:
 
-For $\lambda_2 = 2$: $(\mathbf{S}-2\mathbf{I})\mathbf{v} = \begin{bmatrix}1&1\\1&1\end{bmatrix}\mathbf{v} = 0 \Rightarrow \mathbf{v}_2 = \frac{1}{\sqrt{2}}\begin{bmatrix}1\\-1\end{bmatrix}$
+$$(\mathbf{S}-4\mathbf{I})\mathbf{v} = \begin{bmatrix}-1&1\\1&-1\end{bmatrix}\mathbf{v} = \mathbf{0} \implies \mathbf{v}_1 = \frac{1}{\sqrt{2}}\begin{bmatrix}1\\1\end{bmatrix}$$
+
+For $\lambda_2 = 2$:
+
+$$(\mathbf{S}-2\mathbf{I})\mathbf{v} = \begin{bmatrix}1&1\\1&1\end{bmatrix}\mathbf{v} = \mathbf{0} \implies \mathbf{v}_2 = \frac{1}{\sqrt{2}}\begin{bmatrix}1\\-1\end{bmatrix}$$
 
 **Verify orthogonality:** $\mathbf{v}_1 \cdot \mathbf{v}_2 = \frac{1}{2}(1 - 1) = 0 \checkmark$
 
@@ -384,9 +390,13 @@ pandas>=2.2,<3.0
 
 ---
 
-### Q3 (Mathematical): Compute $\mathbf{A}^{10}$ for $\mathbf{A} = \begin{bmatrix}2 & 0\\ 0 & 3\end{bmatrix}$.
+### Q3 (Mathematical): Compute $\mathbf{A}^{10}$ for the diagonal matrix $\mathbf{A}$ given below.
 
-**Answer:** $\mathbf{A}$ is already diagonal, so eigenvalues are $\lambda_1 = 2$, $\lambda_2 = 3$:
+**Answer:**
+
+$$\mathbf{A} = \begin{bmatrix}2 & 0\\ 0 & 3\end{bmatrix}$$
+
+$\mathbf{A}$ is already diagonal, so eigenvalues are $\lambda_1 = 2$, $\lambda_2 = 3$:
 
 $$\mathbf{A}^{10} = \begin{bmatrix}2^{10} & 0\\0 & 3^{10}\end{bmatrix} = \begin{bmatrix}1024 & 0\\0 & 59049\end{bmatrix}$$
 
