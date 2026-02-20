@@ -64,7 +64,9 @@ $$p(\lambda) = \det(\mathbf{A} - \lambda \mathbf{I})$$
 
 This is a degree-$n$ polynomial in $\lambda$. Its roots (possibly complex) are the eigenvalues.
 
-**For a 2×2 matrix $\mathbf{A} = \begin{bmatrix}a & b \\ c & d\end{bmatrix}$:**
+**For a 2×2 matrix $\mathbf{A}$:**
+
+$$\mathbf{A} = \begin{bmatrix}a & b \\ c & d\end{bmatrix}$$
 
 $$\det(\mathbf{A} - \lambda\mathbf{I}) = (a-\lambda)(d-\lambda) - bc = \lambda^2 - (a+d)\lambda + (ad-bc)$$
 $$= \lambda^2 - \text{tr}(\mathbf{A})\lambda + \det(\mathbf{A}) = 0$$
@@ -391,9 +393,11 @@ So $(\lambda - \mu)(\mathbf{u}^\top\mathbf{v}) = 0$. Since $\lambda \neq \mu$, w
 
 ---
 
-### Q3 (Mathematical): Find the eigenvalues of $\mathbf{A} = \begin{bmatrix}3 & -2\\1 & 0\end{bmatrix}$.
+### Q3 (Mathematical): Find the eigenvalues of the matrix $\mathbf{A}$ given below.
 
 **Answer:**
+
+$$\mathbf{A} = \begin{bmatrix}3 & -2\\1 & 0\end{bmatrix}$$
 
 $$\det(\mathbf{A} - \lambda\mathbf{I}) = (3-\lambda)(0-\lambda) - (-2)(1) = -\lambda(3-\lambda) + 2 = \lambda^2 - 3\lambda + 2 = 0$$
 $$(\lambda-1)(\lambda-2) = 0 \implies \lambda_1 = 1, \quad \lambda_2 = 2$$
